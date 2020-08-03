@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QHBoxLayout>      //水平布局
 #include <QVBoxLayout>      //垂直布局
+#include <QDebug>
 
 class Widget : public QWidget
 {
@@ -15,6 +16,9 @@ public:
     ~Widget();
 private:
     QPushButton *pb,*pbb;
+private slots:
+    void show_clicked_OK();
+    //void show_clicked_CAN();
 };
 
 #endif // WIDGET_H
