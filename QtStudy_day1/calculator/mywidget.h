@@ -15,15 +15,16 @@ public:
     myWidget(QWidget *parent = 0);
     ~myWidget();
 private:
-    QPushButton *pba,*pbb,*pbc,*pbd,*pb;
-    QPushButton *pb0,*pb1,*pb2,*pb3,*pb4,*pb5,*pb6,*pb7,*pb8,*pb9;
+    QPushButton *pb_expr[5];
+    QPushButton *pb_num[10];
     QPushButton *pbpot,*pbclr,*pbdel;
     QLineEdit *le;
-    int num1;
-    int num2;
-    int sum;
+    double num1;
+    double num2;
+    double sum;
     int flag;
-    int temp;
+    int flagp;
+    QString temp;
 
 private slots:
     void my_add();
@@ -33,6 +34,7 @@ private slots:
     void my_counter();
     void my_equal();
     void my_ac();
+    void point_clicked();
 };
 
 #endif // MYWIDGET_H
