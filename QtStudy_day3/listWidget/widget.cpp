@@ -42,8 +42,8 @@ Widget::~Widget()
 void Widget::leftToRight()
 {
     //QListWidgetItem *item = lw1->currentItem();
-    //QListWidgetItem *item = lw1->takeItem(lw1->currentRow());
-    QListWidgetItem *item = new QListWidgetItem(lw1->takeItem(lw1->currentRow()));
+    QListWidgetItem *item = lw1->takeItem(lw1->currentRow());
+    //QListWidgetItem *item = new QListWidgetItem(lw1->takeItem(lw1->currentRow()));
     lw2->addItem(item);
 }
 

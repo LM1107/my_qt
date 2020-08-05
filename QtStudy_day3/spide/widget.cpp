@@ -26,8 +26,8 @@ Widget::Widget(QWidget *parent)
     vbox->addWidget(pgb);
     setLayout(vbox);
 
-//    connect(sd,SIGNAL(valueChanged(int)),this,SLOT(setValues()));
-//    connect(sb,SIGNAL(valueChanged(int)),sd,SLOT(setValue(int)));
+    connect(sd,SIGNAL(valueChanged(int)),this,SLOT(setValues()));
+    connect(sb,SIGNAL(valueChanged(int)),sd,SLOT(setValue(int)));
     connect(sb,SIGNAL(valueChanged(int)),le,SLOT(setValue(int)));
 
 }
