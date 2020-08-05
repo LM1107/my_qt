@@ -7,6 +7,8 @@
 #include <QPushButton>
 #include <QDebug>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
+//#include <Q
 
 class subWidget : public QWidget
 {
@@ -16,6 +18,7 @@ public:
     QLabel *l;
     QPushButton *pbn;
     QPushButton *pbp;
+    QPixmap *pic;
 
     QWidget *w;
     QStringList filelist;

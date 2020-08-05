@@ -8,29 +8,37 @@ subWidget::subWidget(QString str1,int s,QWidget *widget,QWidget *parent) : QWidg
     filelist = str1.split(",");
 
     l = new QLabel("pic",this);
+    l->setFixedSize(680,480);
 
-    pbp = new QPushButton;
+    pbp = new QPushButton(this);
     pbp->setIcon(QIcon(":/pic/left.jpg"));
     pbp->setIconSize(QSize(75,75));
     pbp->setFixedSize(75,75);
     pbp->setEnabled(false);
+    pbp->setFlat(true);
 
-    pbn = new QPushButton;
+    pbn = new QPushButton(this);
     pbn->setIcon(QIcon(":/pic/right.jpg"));
     pbn->setIconSize(QSize(75,75));
-    pbp->setFixedSize(75,75);
+    pbn->setFixedSize(75,75);
     pbn->setEnabled(true);
+    pbn->setFlat(true);
 
-    l->setPixmap(QPixmap(filelist[flag]));
+    pic = new QPixmap(filelist[flag]);
+    pic->scaled(l->size(),Qt::KeepAspectRatio);
     l->setScaledContents(true);
+    l->setPixmap(*pic);
 
-    QHBoxLayout *hbox = new QHBoxLayout;
-    hbox->addWidget(pbp);
-    hbox->addStretch();
-    hbox->addWidget(l);
-    hbox->addStretch();
-    hbox->addWidget(pbn);
-    setLayout(hbox);
+//    QHBoxLayout *hbox = new QHBoxLayout;
+//    hbox->addWidget(pbp);
+//    hbox->addStretch();
+//    hbox->addWidget(l);
+//    hbox->addStretch();
+//    hbox->addWidget(pbn);
+//    setLayout(hbox);
+
+    pbp->setGeometry(0,300,75,75);
+    pbn->setGeometry(600,300,50,50);
 
     connect(pbp,SIGNAL(clicked(bool)),this,SLOT(turnUp()));
     connect(pbn,SIGNAL(clicked(bool)),this,SLOT(turnDown()));
@@ -43,7 +51,10 @@ void subWidget::turnUp()
     else
         flag--;
     pbn->setEnabled(true);
-    l->setPixmap(QPixmap(filelist[flag]));
+    pic = new QPixmap(filelist[flag]);
+    pic->scaled(l->size(),Qt::KeepAspectRatio);
+    l->setScaledContents(true);
+    l->setPixmap(*pic);
 }
 
 void subWidget::turnDown()
@@ -54,6 +65,9 @@ void subWidget::turnDown()
     else
         flag++;
     pbp->setEnabled(true);
-    l->setPixmap(QPixmap(filelist[flag]));
+    pic = new QPixmap(filelist[flag]);
+    pic->scaled(l->size(),Qt::KeepAspectRatio);
+    l->setScaledContents(true);
+    l->setPixmap(*pic);
 
 }

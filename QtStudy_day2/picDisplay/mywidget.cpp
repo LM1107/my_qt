@@ -3,8 +3,7 @@
 myWidget::myWidget(QWidget *parent)
     : QWidget(parent)
 {
-    pbopen = new QPushButton("open file"
-                             "",this);
+    pbopen = new QPushButton("open file",this);
     QFont font("Times",30,QFont::Bold);
     pbopen->setFont(font);
     pbopen->setFixedSize(250,250);
@@ -37,12 +36,18 @@ myWidget::~myWidget()
 
 void myWidget::openFile()
 {
-    QStringList filenames = QFileDialog::getOpenFileNames(this,"open file",".","Image Files(*.png *.jpg *.bmp)");
+    //QStringList filenames;// = QFileDialog::getOpenFileNames(this,"open file",".","Image Files(*.png *.jpg *.bmp)");
+    QStringList filenames = QFileDialog::getOpenFileNames(this, "OPen files", ".", "Images(*.jpg)");
+
     qDebug() << filenames;
+    if(filenames.isEmpty())
+        return;
+    /*
     int size = filenames.size();
     QString str = filenames.join(",");
     qDebug() << str;
     subWidget *sw = new subWidget(str,size,this);
     this->hide();
     sw->show();
+    */
 }
