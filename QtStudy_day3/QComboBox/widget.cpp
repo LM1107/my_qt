@@ -3,10 +3,10 @@
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
 {
-    le = new QLineEdit;
+    le = new QLineEdit("A");
     cbb = new QComboBox;
     cbb->addItem("A");
-    cbb->addItem(":/pic/left.jpg");
+    cbb->addItem(QIcon(":/pic/1.jpg"),"left");
     QStringList list = {"B","C","D"};
     cbb->addItems(list);
 
@@ -21,8 +21,10 @@ Widget::~Widget()
 
 }
 
+/*
 void Widget::getText()
 {
     QString str =  cbb->currentText();
     le->setText();
 }
+*/

@@ -19,6 +19,9 @@ public:
 private:
     QPushButton *pb1,*pb2;
     QListWidget *lw1,*lw2;
+private slots:
+    void leftToRight();
+    void rightToLeft();
 };
 
 #endif // WIDGET_H
