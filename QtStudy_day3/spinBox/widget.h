@@ -2,8 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QSpinBox>
 #include <QLineEdit>
-#include <QComboBox>
 #include <QVBoxLayout>
 #include <QDebug>
 
@@ -16,10 +16,11 @@ public:
     ~Widget();
 private:
     QLineEdit *le;
-    QComboBox *cbb;
+    QSpinBox *sb;
+    QDoubleSpinBox *dsb;
 private slots:
-    void getText();
-    void getText(QString);
+    void setVal(int);
+    void setDVal(double);
 };
 
 #endif // WIDGET_H

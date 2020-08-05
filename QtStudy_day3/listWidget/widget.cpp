@@ -38,6 +38,7 @@ Widget::~Widget()
 
 }
 
+
 void Widget::leftToRight()
 {
     //QListWidgetItem *item = lw1->currentItem();

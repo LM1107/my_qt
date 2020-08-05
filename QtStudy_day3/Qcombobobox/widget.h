@@ -19,7 +19,6 @@ private:
     QComboBox *cbb;
 private slots:
     void getText();
-    void getText(QString);
 };
 
 #endif // WIDGET_H

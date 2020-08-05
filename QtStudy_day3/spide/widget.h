@@ -2,10 +2,12 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QLineEdit>
-#include <QComboBox>
+#include <QSlider>      //滑动条
+#include <QScrollBar>       //滚动条
+#include <QProgressBar>         //进度条
 #include <QVBoxLayout>
 #include <QDebug>
+#include <QLineEdit>
 
 class Widget : public QWidget
 {
@@ -15,11 +17,12 @@ public:
     Widget(QWidget *parent = 0);
     ~Widget();
 private:
+    QScrollBar *sb;
+    QSlider *sd;
+    QProgressBar *pgb;
     QLineEdit *le;
-    QComboBox *cbb;
 private slots:
-    void getText();
-    void getText(QString);
+    void setValues();
 };
 
 #endif // WIDGET_H
