@@ -42,17 +42,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //添加工具栏
-//    pb1 = new QPushButton;
-//    pb2 = new QPushButton;
-//    pb3 = new QPushButton;
-
-        filetool = addToolBar("File");
-        filetool->addAction(Act[0][0]);
-        filetool->addAction(Act[0][1]);
-        filetool->addAction(Act[0][2]);
-//    filetool->addWidget(pb1);
-//    filetool->addWidget(pb2);
-//    filetool->addWidget(pb3);
+    filetool = addToolBar("File");
+    filetool->addAction(Act[0][0]);
+    filetool->addAction(Act[0][1]);
+    filetool->addAction(Act[0][2]);
 
     te = new QTextEdit;
     te->setMinimumSize(640,480);
@@ -99,7 +92,6 @@ void MainWindow::newFile()
     }
     te->clear();
     filename = "";
-    return;
 }
 
 void MainWindow::openFile()
@@ -144,6 +136,7 @@ void MainWindow::saveFile()
     if(filename.isEmpty())
     {
         saveasFile();   //另存为
+        return;
     }
     QFile file(filename);
     if(file.open(QIODevice::WriteOnly|QIODevice::Truncate|QIODevice::Text))

@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-//#include <Q
+
 
 class subWidget : public QWidget
 {
@@ -25,6 +25,7 @@ public:
     int size;
 
     int flag;
+
 signals:
 
 public slots:

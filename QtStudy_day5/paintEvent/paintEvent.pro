@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2020-08-05T14:59:10
+# Project created by QtCreator 2020-08-07T16:12:14
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Pic_v2
+TARGET = paintEvent
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,14 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mywidget.cpp \
-    subwidget.cpp \
-    mypushbutton.cpp
+        widget.cpp
 
 HEADERS += \
-        mywidget.h \
-    subwidget.h \
-    mypushbutton.h
-
-RESOURCES += \
-    qrcrc.qrc
+        widget.h

@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-//#include <Q
+#include "mypushbutton.h"
 
 class subWidget : public QWidget
 {
@@ -16,10 +16,9 @@ class subWidget : public QWidget
 public:
     explicit subWidget(QString str1,int s,QWidget *widget,QWidget *parent = nullptr);
     QLabel *l;
-    QPushButton *pbn;
-    QPushButton *pbp;
+    myPushbutton *pbn;
+    myPushbutton *pbp;
     QPixmap *pic;
-
     QWidget *w;
     QStringList filelist;
     int size;

@@ -71,3 +71,13 @@ void subWidget::turnDown()
     l->setPixmap(*pic);
 
 }
+
+void subWidget::keyPressEvent(QKeyEvent *event)
+{
+    int key = event->key();
+    if(key == Qt::Key_Up)
+        turnUp();
+    else if(key == Qt::Key_Down)
+        turnDown();
+}
+

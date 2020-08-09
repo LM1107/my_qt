@@ -6,25 +6,25 @@ subWidget::subWidget(QString str1,int s,QWidget *widget,QWidget *parent) : QWidg
     size = s;
     flag = 0;
     filelist = str1.split(",");
-
+        //qDebug()<<filelist;
     l = new QLabel("pic",this);
     l->setFixedSize(680,480);
 
-    pbp = new QPushButton(this);
+    pbp = new myPushbutton(this);
     pbp->setIcon(QIcon(":/pic/left.jpg"));
     pbp->setIconSize(QSize(75,75));
     pbp->setFixedSize(75,75);
     pbp->setEnabled(false);
     pbp->setFlat(true);
 
-    pbn = new QPushButton(this);
+    pbn = new myPushbutton(this);
     pbn->setIcon(QIcon(":/pic/right.jpg"));
     pbn->setIconSize(QSize(75,75));
     pbn->setFixedSize(75,75);
     pbn->setEnabled(true);
     pbn->setFlat(true);
 
-    pic = new QPixmap(filelist[flag]);
+    pic = new QPixmap(filelist.at(flag));
     pic->scaled(l->size(),Qt::KeepAspectRatio);
     l->setScaledContents(true);
     l->setPixmap(*pic);
@@ -42,6 +42,9 @@ subWidget::subWidget(QString str1,int s,QWidget *widget,QWidget *parent) : QWidg
 
     connect(pbp,SIGNAL(clicked(bool)),this,SLOT(turnUp()));
     connect(pbn,SIGNAL(clicked(bool)),this,SLOT(turnDown()));
+    connect(pbp,SIGNAL(keyPressUp(bool)),this,SLOT(turnUp()));
+    connect(pbn,SIGNAL(keyPressDown(bool)),this,SLOT(turnDown()));
+
 }
 
 void subWidget::turnUp()
